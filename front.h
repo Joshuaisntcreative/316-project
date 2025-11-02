@@ -48,7 +48,6 @@ extern int nextToken;
 extern char lexeme[];
 extern FILE *in_fp;
 
-
 int lex();
 void getChar();
 void addChar();
