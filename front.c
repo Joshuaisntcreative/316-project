@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include "front.h"
-
+#include <string.h>
 
 /* Global declarations */
 /* Variables */
@@ -176,9 +176,8 @@ int lex()
         {
             addChar();
             getChar();
-            dataTypeCheck();
         }
-        nextToken = IDENT;
+        checkKeyword();
         break;
     /* Parse integer literals */
     case DIGIT:
@@ -209,4 +208,22 @@ int lex()
            nextToken, lexeme);
     return nextToken;
 } /* End of function lex */
+
+
+int checkKeyword() {
+    if (strcmp(lexeme, "int") == 0)
+        nextToken = INT_KEYWORD;
+    else if (strcmp(lexeme, "unsigned") == 0)
+        nextToken = UNSIGNED_KEYWORD;
+    else if (strcmp(lexeme, "signed") == 0)
+        nextToken = SIGNED_KEYWORD;
+    else if (strcmp(lexeme, "short") == 0)
+        nextToken = SHORT_KEYWORD;
+    else if (strcmp(lexeme, "long") == 0)
+        nextToken = LONG_KEYWORD;
+    else
+        nextToken = IDENT;   // default if not a keyword
+
+    return nextToken;
+}
 

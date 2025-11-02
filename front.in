@@ -1,1 +1,1 @@
-total += (sum + 47) / total
+unsigned total += (sum + 47)
