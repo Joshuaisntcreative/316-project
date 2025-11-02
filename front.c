@@ -32,19 +32,67 @@ int lookup(char ch)
         break;
     case '+':
         addChar();
+        getChar();
+        if(nextChar == '=')
+        {
+            addChar();
+            nextToken = PLUSEQUALS;
+            getChar();
+        }
+        else{
         nextToken = ADD_OP;
+        }
+
         break;
     case '-':
         addChar();
-        nextToken = SUB_OP;
+        getChar();
+        if (nextChar == '=') {
+            addChar();
+            nextToken = MINUSEQUALS;  // -=
+            getChar();
+        } else {
+            nextToken = SUB_OP;       // -
+        }
         break;
+
     case '*':
         addChar();
-        nextToken = MULT_OP;
+        getChar();
+        if (nextChar == '=') {
+            addChar();
+            nextToken = MULTEQUALS;   // *=
+            getChar();
+        } else {
+            nextToken = MULT_OP;      // *
+        }
         break;
     case '/':
         addChar();
-        nextToken = DIV_OP;
+        getChar();
+        if (nextChar == '=') {
+            addChar();
+            nextToken = DIVIDEEQUALS; // /=
+            getChar();
+        } else {
+            nextToken = DIV_OP;       // /
+        }
+        break;
+
+    case '%':
+        addChar();
+        getChar();
+        if(nextChar == '=')
+        {
+            addChar();
+            nextToken = MODEQUALS;
+            getChar();
+        }else{
+            nextToken = MOD_OP;
+            }
+    case '^':
+        addChar();
+        nextToken = POW_OP;
         break;
     case '=':
         addChar();
@@ -58,13 +106,7 @@ int lookup(char ch)
     return nextToken;
 }
 
-int advancedLookup(char str[])
-{
-    switch(str)
-    {
-        
-    }
-}
+
 
 //you want a separate look up table for the +=, -=,...
 //we can tell the lexical analyser to look at this special table if the codes for the
@@ -82,6 +124,9 @@ void addChar()
     else
         printf("Error - lexeme is too long \n");
 }
+
+//called when there is an operator detected by the lexical analyser and will determine whether the token is a regular operator or an incremental one i.e (+, +=)
+//will call get next char to peek ahead and determine if the next char is a =, if so we will handle the call differently.
 
 
 
@@ -131,6 +176,7 @@ int lex()
         {
             addChar();
             getChar();
+            dataTypeCheck();
         }
         nextToken = IDENT;
         break;

@@ -7,6 +7,7 @@
 #define DIGIT 1
 #define UNKNOWN 99
 
+
 //Token codes
 
 // going to define the custom codes for the project after right paren to make it easier to understand
@@ -17,21 +18,24 @@
 #define SUB_OP 22
 #define MULT_OP 23
 #define DIV_OP 24
-#define LEFT_PAREN 25
-#define RIGHT_PAREN 26
+#define MOD_OP 25
+#define POW_OP 26
+#define LEFT_PAREN 27
+#define RIGHT_PAREN 28
+#define PARENS 29
 
 
 //custom tokens codes for the project
-#define UNSIGNED 27
-#define SIGNED 28
-#define BYTE 29
-#define SHORT 30
-#define LONG 31
-#define PLUSEQUALS 32
-#define MINUSEQUALS 33
-#define MULTEQUALS 34
-#define DIVIDEEQUALS 35
-#define MODEQUALS 36
+#define UNSIGNED 37
+#define SIGNED 38
+#define BYTE 39
+#define SHORT 40
+#define LONG 41
+#define PLUSEQUALS 42
+#define MINUSEQUALS 43
+#define MULTEQUALS 44
+#define DIVIDEEQUALS 45
+#define MODEQUALS 46
 #define EOF_TOKEN -1
 
 extern int nextToken;
@@ -43,6 +47,7 @@ int lex();
 void getChar();
 void addChar();
 void getNonBlank();
-
+void peekAhead();
+int specialLookupTable(char lex[]);
 
 #endif
