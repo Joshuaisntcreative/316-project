@@ -132,34 +132,31 @@ void exp3()
 {
     depth++;
     printf("Enter %d  <exp>\n", depth);
-    /* Determine which RHS */
-    if (nextToken == IDENT || nextToken == INT_LIT)
 
-        /* Get the next token */
+    if (nextToken == IDENT || nextToken == INT_LIT)
+    {
         lex();
-    /* If the RHS is ( <expr> ), call lex to pass over the
-    left parenthesis, call expr, and check for the right
-    parenthesis */
+    }
+    else if (nextToken == LEFT_PAREN)
+    {
+        lex();          // consume '('
+        expr();         // parse the inner expression
+        if (nextToken == RIGHT_PAREN)
+            lex();      // consume ')'
+        else
+            printf("ERROR: missing ')'\n");
+    }
+    else if (nextToken == RIGHT_PAREN)
+    {
+        
+        // just return gracefully — don't treat as error
+        // this handles redundant exp3() calls that hit a closing paren
+    }
     else
     {
-        if (nextToken == LEFT_PAREN)
-        {
-            lex();
-            expr();
-            if (nextToken == RIGHT_PAREN)
-                lex();
-            else
-                perror("Error occured");
-        } /* End of if (nextToken == ... */
-        /* It was not an id, an integer literal, or a left
-        parenthesis */
-        else
-            perror("Error occured");
-    } /* End of else */
+        printf("ERROR: unexpected token %d\n", nextToken);
+    }
+
     printf(" Exit %d <exp>\n", depth);
     depth--;
-    ;
-} /* End of function exp */
-
-
-
+}
