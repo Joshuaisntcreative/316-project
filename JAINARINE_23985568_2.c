@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <ctype.h>
-#include "front.h"
+#include "JAINARINE_23985568_2.h"
 #include <string.h>
 
 /* Global declarations */
@@ -142,6 +142,10 @@ void getChar()
             charClass = LETTER;
         else if (isdigit(nextChar))
             charClass = DIGIT;
+        else if (nextChar == '\n')
+        {
+            charClass = NEWLINE;
+        }
         else
             charClass = UNKNOWN;
     }
@@ -195,6 +199,9 @@ int lex()
         lookup(nextChar);
         getChar();
         break;
+    case NEWLINE:
+        nextToken = EOL;
+        break;
     /* EOF */
     case EOF:
         nextToken = EOF;
@@ -209,7 +216,7 @@ int lex()
     return nextToken;
 } /* End of function lex */
 
-
+//had to cheat a bit, I didn't see a better way in C to compare strings, this function just handles the keywords at the start of the front.in files
 int checkKeyword() {
     if (strcmp(lexeme, "int") == 0)
         nextToken = INT_KEYWORD;

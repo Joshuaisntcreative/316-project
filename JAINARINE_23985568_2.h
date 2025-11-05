@@ -6,7 +6,9 @@
 #define LETTER 0
 #define DIGIT 1
 #define UNKNOWN 99
-
+//used for the lexical analyser to handle multiple lines in the front.in file
+#define NEWLINE 120
+#define EOL 121
 //Token codes
 
 // going to define the custom codes for the project after right paren to make it easier to understand

@@ -1,0 +1,121 @@
+Next token is: 11, Next lexeme is A
+Enter <assign>
+Next token is: 20, Next lexeme is =
+Next token is: 11, Next lexeme is A
+Enter 1 <expr>
+Enter 2 <term>
+Enter 3 <factor>
+Enter 4 <exp>
+Next token is: 23, Next lexeme is *
+Exit 4 <exp>
+Exit 3 <factor>
+Next token is: 27, Next lexeme is (
+Enter 3 <factor>
+Enter 4 <exp>
+Next token is: 11, Next lexeme is B
+Enter 5 <expr>
+Enter 6 <term>
+Enter 7 <factor>
+Enter 8 <exp>
+Next token is: 21, Next lexeme is +
+Exit 8 <exp>
+Exit 7 <factor>
+Exit 6 <term>
+Next token is: 27, Next lexeme is (
+Enter 6 <term>
+Enter 7 <factor>
+Enter 8 <exp>
+Next token is: 11, Next lexeme is C
+Enter 9 <expr>
+Enter 10 <term>
+Enter 11 <factor>
+Enter 12 <exp>
+Next token is: 23, Next lexeme is *
+Exit 12 <exp>
+Exit 11 <factor>
+Next token is: 28, Next lexeme is )
+Enter 11 <factor>
+Enter 12 <exp>
+Exit 12 <exp>
+Exit 11 <factor>
+Exit 10 <term>
+Exit 9 <expr>
+Next token is: 28, Next lexeme is )
+Exit 8 <exp>
+Exit 7 <factor>
+Exit 6 <term>
+Exit 5 <expr>
+Next token is: 11, Next lexeme is total
+Exit 4 <exp>
+Exit 3 <factor>
+Exit 2 <term>
+Exit 1 <expr>
+Next token is: 42, Next lexeme is +=
+Enter <assign>
+Enter 1 <expr>
+Enter 2 <term>
+Enter 3 <factor>
+Enter 4 <exp>
+ERROR: unexpected token 42
+Exit 4 <exp>
+Exit 3 <factor>
+Exit 2 <term>
+Exit 1 <expr>
+Next token is: 27, Next lexeme is (
+Enter <assign>
+Enter 1 <expr>
+Enter 2 <term>
+Enter 3 <factor>
+Enter 4 <exp>
+Next token is: 11, Next lexeme is sum
+Enter 5 <expr>
+Enter 6 <term>
+Enter 7 <factor>
+Enter 8 <exp>
+Next token is: 21, Next lexeme is +
+Exit 8 <exp>
+Exit 7 <factor>
+Exit 6 <term>
+Next token is: 10, Next lexeme is 47
+Enter 6 <term>
+Enter 7 <factor>
+Enter 8 <exp>
+Next token is: 28, Next lexeme is )
+Exit 8 <exp>
+Exit 7 <factor>
+Exit 6 <term>
+Exit 5 <expr>
+Next token is: 24, Next lexeme is /
+Exit 4 <exp>
+Exit 3 <factor>
+Next token is: 11, Next lexeme is total
+Enter 3 <factor>
+Enter 4 <exp>
+Next token is: 51, Next lexeme is unsigned
+Exit 4 <exp>
+Exit 3 <factor>
+Exit 2 <term>
+Exit 1 <expr>
+Next token is: 50, Next lexeme is int
+Enter <assign>
+Next token is: 11, Next lexeme is count
+Enter 1 <expr>
+Enter 2 <term>
+Enter 3 <factor>
+Enter 4 <exp>
+Next token is: 20, Next lexeme is =
+Exit 4 <exp>
+Exit 3 <factor>
+Exit 2 <term>
+Exit 1 <expr>
+Next token is: 10, Next lexeme is 5
+Enter <assign>
+Enter 1 <expr>
+Enter 2 <term>
+Enter 3 <factor>
+Enter 4 <exp>
+Next token is: -1, Next lexeme is EOF
+Exit 4 <exp>
+Exit 3 <factor>
+Exit 2 <term>
+Exit 1 <expr>
